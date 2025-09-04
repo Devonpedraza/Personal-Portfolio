@@ -23,10 +23,18 @@ const Projects = () => {
               categorized content.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">Laravel Blade</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">PHP</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">CSS</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">HTML</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                Laravel Blade
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                PHP
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                CSS
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                HTML
+              </span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
@@ -59,9 +67,15 @@ const Projects = () => {
               shopping experience.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">HTML</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">CSS</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">JavaScript</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                HTML
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                CSS
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                JavaScript
+              </span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
@@ -93,9 +107,12 @@ const Projects = () => {
               4 stages of Alzheimer’s with 98.44% accuracy.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">React</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">AWS</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">Python</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                AWS
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                Python
+              </span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
@@ -128,9 +145,15 @@ const Projects = () => {
               animations, a responsive navbar, and modern design.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">React</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">TailwindCSS</span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">Firebase Hosting</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                React
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                TailwindCSS
+              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
+                Firebase Hosting
+              </span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
