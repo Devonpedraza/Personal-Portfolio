@@ -81,7 +81,7 @@ const Home = () => {
         </div>
 
         {/* Image Section */}
-        <div className="flex items-center justify-center w-full">
+        <div className="hidden md:flex items-center justify-center w-full">
           <div className="overflow-hidden rounded-tl-[200px] rounded-br-[80px] shadow-2xl w-full max-w-[450px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] aspect-square">
             <img
               src="/Headshot.jpg"
@@ -101,7 +101,7 @@ const Home = () => {
           ABOUT ME
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-12 lg:px-10 pt-15">
-          <div className="flex items-center justify-center w-full">
+          <div className="hidden md:flex items-center justify-center w-full">
             <div className="overflow-hidden rounded-tr-[100px] rounded-bl-[70px] shadow-2xl w-full max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] aspect-square">
               <img
                 src="/Headshot.jpg"
@@ -186,7 +186,7 @@ const Home = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center justify-center pt-20">
+        <div className="flex items-center justify-center pt-20 pb-16 sm:pb-0">
           {/* --- REVISED 'SEE MORE' BUTTON --- */}
           <RouterLink
             to="/courses"

@@ -101,7 +101,7 @@ const CourseCard = ({ title, description, badges }) => (
 const Courses = () => {
   return (
     <AnimatedPage>
-      <div className="px-4 pt-20 md:px-12 lg:px-24 min-h-screen">
+      <div className="px-4 pt-20 md:px-12 lg:px-24 min-h-screen pb-16 sm:pb-0">
         <h1
           className="flex justify-center text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-white"
           style={{ fontFamily: "Playfair Display, serif" }}
