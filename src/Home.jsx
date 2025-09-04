@@ -84,7 +84,7 @@ const Home = () => {
         <div className="flex items-center justify-center w-full">
           <div className="overflow-hidden rounded-tl-[200px] rounded-br-[80px] shadow-2xl w-full max-w-[450px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] aspect-square">
             <img
-              src="/src/images/Headshot2 - Copy.jpg"
+              src="/Headshot.jpg"
               alt="Head Shot of Devon Pedraza"
               className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
             />
@@ -104,7 +104,7 @@ const Home = () => {
           <div className="flex items-center justify-center w-full">
             <div className="overflow-hidden rounded-tr-[100px] rounded-bl-[70px] shadow-2xl w-full max-w-[350px] sm:max-w-[500px] md:max-w-[600px] lg:max-w-[700px] aspect-square">
               <img
-                src="/src/images/Headshot2.jpg"
+                src="/Headshot.jpg"
                 alt="Head Shot of Devon Pedraza"
                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               />
@@ -134,57 +134,57 @@ const Home = () => {
           COURSES
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-20">
-            {/* CSC 4899 · Senior Project */}
-            <div className="bg-white/10 backdrop-blur-md border border-gray-500 rounded-2xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-500">
-              <div className="flex justify-between items-start mb-3">
-                <h4 className="text-xl font-semibold text-white">
-                  CSC 4899 · Senior Project
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-                    Capstone
-                  </span>
-                  <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-                    AI
-                  </span>
-                  <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-                    Web Dev
-                  </span>
-                </div>
+          {/* CSC 4899 · Senior Project */}
+          <div className="bg-white/10 backdrop-blur-md border border-gray-500 rounded-2xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-500">
+            <div className="flex justify-between items-start mb-3">
+              <h4 className="text-xl font-semibold text-white">
+                CSC 4899 · Senior Project
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                  Capstone
+                </span>
+                <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                  AI
+                </span>
+                <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                  Web Dev
+                </span>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Collaborated in a team to build a web application providing
-                Alzheimer's information and an AI bot capable of detecting
-                conditions from MRI scans with 98.44% accuracy. Developed the
-                application using HTML and CSS, deployed it on AWS, and
-                delivered a fully functional, publicly accessible online
-                platform. Gained experience in web development, AI integration,
-                and cloud deployment.
-              </p>
             </div>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Collaborated in a team to build a web application providing
+              Alzheimer's information and an AI bot capable of detecting
+              conditions from MRI scans with 98.44% accuracy. Developed the
+              application using HTML and CSS, deployed it on AWS, and delivered
+              a fully functional, publicly accessible online platform. Gained
+              experience in web development, AI integration, and cloud
+              deployment.
+            </p>
+          </div>
 
-            {/* CSC 4610 · Advanced Web Development */}
-            <div className="bg-white/10 backdrop-blur-md border border-gray-500 rounded-2xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-500">
-              <div className="flex justify-between items-start mb-3">
-                <h4 className="text-xl font-semibold text-white">
-                  CSC 4610 · Advanced Web Development
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-                    Web Dev
-                  </span>
-                  <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
-                    Full Stack
-                  </span>
-                </div>
+          {/* CSC 4610 · Advanced Web Development */}
+          <div className="bg-white/10 backdrop-blur-md border border-gray-500 rounded-2xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-500">
+            <div className="flex justify-between items-start mb-3">
+              <h4 className="text-xl font-semibold text-white">
+                CSC 4610 · Advanced Web Development
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                  Web Dev
+                </span>
+                <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                  Full Stack
+                </span>
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed">
-                Explored advanced web topics such as security, UX, and
-                mobile-friendly design while building a full-stack recipe
-                application using PHP, Laravel, and SQLite, featuring user
-                authentication, data persistence, and dynamic content.
-              </p>
             </div>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Explored advanced web topics such as security, UX, and
+              mobile-friendly design while building a full-stack recipe
+              application using PHP, Laravel, and SQLite, featuring user
+              authentication, data persistence, and dynamic content.
+            </p>
+          </div>
         </div>
         <div className="flex items-center justify-center pt-20">
           {/* --- REVISED 'SEE MORE' BUTTON --- */}
