@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <AnimatedPage>
       {/* Hero Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 min-h-screen gap-8 px-4 pt-20 md:px-12 lg:px-10">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 px-4 pt-4 md:pt-0 md:-mt-10 md:px-12 lg:px-10 items-center md:justify-center md:min-h-screen">
         {/* Text Section */}
         <div className="flex flex-col items-center justify-center text-center md:items-start md:text-left">
           <h1
@@ -81,8 +81,8 @@ const Home = () => {
         </div>
 
         {/* Image Section */}
-        <div className="md:flex items-center justify-center w-full">
-          <div className="overflow-hidden rounded-tl-[200px] rounded-br-[80px] shadow-2xl w-full max-w-[450px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] aspect-square">
+        <div className="flex items-center justify-center w-full">
+          <div className="overflow-hidden rounded-tl-[60px] sm:rounded-tl-[100px] md:rounded-tl-[120px] lg:rounded-tl-[160px] rounded-br-[80px] shadow-2xl w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[700px] aspect-square">
             <img
               src="/Headshot.jpg"
               alt="Head Shot of Devon Pedraza"

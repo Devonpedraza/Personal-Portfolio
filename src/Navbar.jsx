@@ -1,6 +1,5 @@
 // React and router imports
 import { useState, useRef, useEffect } from "react";
-// For this example, we'll use a placeholder Link if it's not available.
 import { Link as RouterLink, useLocation } from "react-router-dom";
 
 // Navigation links for the navbar
@@ -13,10 +12,7 @@ const navLinks = [
 ];
 
 // Fallback Link component if react-router-dom is not set up
-const Link = (props) => {
-  return <RouterLink {...props} />;
-};
-
+const Link = (props) => <RouterLink {...props} />;
 
 // Hamburger menu icon for mobile
 const MenuIcon = () => (
@@ -57,55 +53,37 @@ const CloseIcon = () => (
 
 // Main Navbar component
 const App = () => {
-  // State for mobile menu open/close
   const [isOpen, setIsOpen] = useState(false);
-  // State for the sliding pill's style (width, left, opacity)
   const [pillStyle, setPillStyle] = useState({ width: 0, left: 0, opacity: 0 });
-
-  // Ref to the container holding the nav links (for measuring pill position)
   const linksContainerRef = useRef(null);
-  // Get the current route location
   const location = useLocation();
 
-  // Toggle mobile menu open/close
-  const toggleMenu = () => setIsOpen(!isOpen);
-  // Close mobile menu (used on link click)
+  const toggleMenu = () => setIsOpen((v) => !v);
   const closeMobileMenu = () => setIsOpen(false);
 
-  // Update the pill's position and size to match the hovered/active link
   const updatePillStyle = (element) => {
     if (element && linksContainerRef.current) {
-        const containerRect = linksContainerRef.current.getBoundingClientRect();
-        const elementRect = element.getBoundingClientRect();
-        
-        setPillStyle({
-            width: element.offsetWidth,
-            left: element.offsetLeft,
-            opacity: 1,
-        });
+      setPillStyle({
+        width: element.offsetWidth,
+        left: element.offsetLeft,
+        opacity: 1,
+      });
     }
   };
 
-  // On route change, set the pill to the active link
   useEffect(() => {
     const activeLink = linksContainerRef.current?.querySelector(
       `a[href="${location.pathname}"]`
     );
-    // Delay to ensure DOM is ready for measurement
     if (activeLink) {
-        setTimeout(() => updatePillStyle(activeLink), 50);
+      setTimeout(() => updatePillStyle(activeLink), 50);
     } else {
-        // If no link is active (e.g., 404 page), hide the pill
-        setPillStyle({ width: 0, left: 0, opacity: 0 });
+      setPillStyle({ width: 0, left: 0, opacity: 0 });
     }
   }, [location.pathname]);
 
-  // On mouse enter, move pill to hovered link
-  const handleMouseEnter = (e) => {
-    updatePillStyle(e.currentTarget);
-  };
+  const handleMouseEnter = (e) => updatePillStyle(e.currentTarget);
 
-  // On mouse leave, reset pill to active link
   const handleMouseLeave = () => {
     const activeLink = linksContainerRef.current?.querySelector(
       `a[href="${location.pathname}"]`
@@ -113,79 +91,134 @@ const App = () => {
     updatePillStyle(activeLink);
   };
 
+  // Prevent body scroll when mobile menu is open (nicer UX)
+  useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = isOpen ? "hidden" : prev || "";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [isOpen]);
+
+  // Chrome mobile fix: dynamically position mobile menu under navbar
+  useEffect(() => {
+    const handleViewportResize = () => {
+      const navHeight = document.querySelector("nav")?.offsetHeight || 80;
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenu) mobileMenu.style.top = `${navHeight}px`;
+    };
+
+    // Run once and add listener
+    handleViewportResize();
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener("resize", handleViewportResize);
+    } else {
+      window.addEventListener("resize", handleViewportResize);
+    }
+
+    return () => {
+      if (window.visualViewport) {
+        window.visualViewport.removeEventListener("resize", handleViewportResize);
+      } else {
+        window.removeEventListener("resize", handleViewportResize);
+      }
+    };
+  }, [isOpen]);
+
   return (
-    // Navbar outer container (fixed, full width)
-    <nav className="bg-black/50 backdrop-blur-md shadow-lg shadow-neutral-900/50 fixed w-full z-50">
-      {/* Main content container (full width, responsive padding) */}
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
-          {/* Logo / Name section */}
-          <div className="flex-shrink-0">
-            <Link to="/" onClick={closeMobileMenu}>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-wider text-white transition-transform duration-300 hover:scale-105" style={{ fontFamily: "Playfair Display, serif" }}>
-                DP
-              </h1>
-            </Link>
-          </div>
-
-          {/* Desktop navigation links (centered) */}
-          <div className="hidden md:flex flex-1 justify-center items-center">
-            <div
-              ref={linksContainerRef}
-              onMouseLeave={handleMouseLeave}
-              className="relative flex items-center p-1 rounded-full bg-gray-800 shadow-[inset_4px_4px_8px_#1f2937,inset_-4px_-4px_8px_#4b5563]"
-            >
-              {/* Sliding pill background for active/hovered link */}
-              <div
-                className="absolute h-10 bg-white/30 backdrop-blur-sm border border-white/20 rounded-full shadow-lg transition-all duration-300 ease-in-out z-0"
-                style={pillStyle}
-              />
-
-              {/* Render each nav link */}
-              {navLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  onMouseEnter={handleMouseEnter}
-                  className={`relative px-20 py-2 text-lg font-medium rounded-full transition-colors duration-300 z-10 
-                    ${
-                      location.pathname === link.to
-                        ? "text-white" // Active text on the light pill
-                        : "text-gray-300 hover:text-white" 
-                    }`}
+    <>
+      {/* FIXED navbar with GPU layer to avoid mobile "disappearing" */}
+      <nav
+        className="
+          fixed inset-x-0 top-0 z-50
+          bg-black/50 backdrop-blur-md
+          shadow-lg shadow-neutral-900/50
+        "
+        style={{
+          paddingTop: "env(safe-area-inset-top)", // notch safe
+          transform: "translateZ(0)", // force GPU layer
+          willChange: "transform",    // keep stable in Chrome
+        }}
+      >
+        <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-20 items-center">
+            {/* Logo / Name section */}
+            <div className="flex-shrink-0">
+              <Link to="/" onClick={closeMobileMenu}>
+                <h1
+                  className="text-4xl md:text-5xl font-extrabold tracking-wider text-white transition-transform duration-300 hover:scale-105"
+                  style={{ fontFamily: "Playfair Display, serif" }}
                 >
-                  {link.label}
-                </Link>
-              ))}
+                  DP
+                </h1>
+              </Link>
+            </div>
+
+            {/* Desktop navigation links (centered) */}
+            <div className="hidden lg:flex flex-1 justify-center items-center">
+              <div
+                ref={linksContainerRef}
+                onMouseLeave={handleMouseLeave}
+                className="relative flex items-center p-1 rounded-full bg-gray-800 shadow-[inset_4px_4px_8px_#1f2937,inset_-4px_-4px_8px_#4b5563]"
+              >
+                {/* Sliding pill background for active/hovered link */}
+                <div
+                  className="absolute h-10 bg-white/30 backdrop-blur-sm border border-white/20 rounded-full shadow-lg transition-all duration-300 ease-in-out z-0"
+                  style={pillStyle}
+                />
+
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onMouseEnter={handleMouseEnter}
+                    className={`relative px-15 py-2 text-lg font-medium rounded-full transition-colors duration-300 z-10 
+                      ${
+                        location.pathname === link.to
+                          ? "text-white"
+                          : "text-gray-300 hover:text-white"
+                      }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile menu button (hamburger/close) */}
+            <div className="flex lg:hidden items-center">
+              <button
+                onClick={toggleMenu}
+                className="p-2 rounded-lg bg-gray-800 text-gray-200 shadow-[4px_4px_8px_#1c1c1c,-4px_-4px_8px_#2a2a2a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                aria-label="Toggle menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
+              >
+                {isOpen ? <CloseIcon /> : <MenuIcon />}
+              </button>
             </div>
           </div>
-
-          {/* Mobile menu button (hamburger/close) */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleMenu}
-              className="p-2 rounded-lg bg-gray-800 text-gray-200 shadow-[4px_4px_8px_#1c1c1c,-4px_-4px_8px_#2a2a2a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? <CloseIcon /> : <MenuIcon />}
-            </button>
-          </div>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile menu dropdown (collapsible) */}
+      {/* Spacer to prevent content from sliding under the fixed navbar (h-20 = 5rem) */}
+      <div className="h-20" aria-hidden="true" />
+
+      {/* Mobile menu dropdown */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        id="mobile-menu"
+        className={`
+          lg:hidden fixed left-0 right-0 z-40
+          transition-opacity duration-300 ease-in-out
+          ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+        `}
       >
         <div className="bg-gray-900 border-t border-gray-700/50 py-2">
-          {/* Render each nav link for mobile */}
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
-              onClick={closeMobileMenu} // Close menu on link click
+              onClick={closeMobileMenu}
               className={`block px-6 py-3 text-lg transition-colors duration-200 
                 ${
                   location.pathname === link.to
@@ -198,9 +231,8 @@ const App = () => {
           ))}
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
 export default App;
-
