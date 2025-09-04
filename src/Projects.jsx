@@ -23,18 +23,10 @@ const Projects = () => {
               categorized content.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                Laravel Blade
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                PHP
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                CSS
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                HTML
-              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">Laravel Blade</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">PHP</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">CSS</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">HTML</span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
@@ -55,6 +47,7 @@ const Projects = () => {
               </a>
             </div>
           </div>
+
           {/* PROJECT 2 */}
           <div className="bg-gray-700/60 backdrop-blur-md border border-gray-500 rounded-2xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-500">
             <h3 className="text-xl font-semibold text-white">
@@ -66,15 +59,9 @@ const Projects = () => {
               shopping experience.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                HTML
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                CSS
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                JavaScript
-              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">HTML</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">CSS</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">JavaScript</span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
@@ -106,15 +93,9 @@ const Projects = () => {
               4 stages of Alzheimer’s with 98.44% accuracy.
             </p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                React
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                AWS
-              </span>
-              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">
-                Python
-              </span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">React</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">AWS</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">Python</span>
             </div>
             <div className="mt-4 flex gap-4">
               <a
@@ -132,6 +113,41 @@ const Projects = () => {
                 className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition"
               >
                 Video Demo
+              </a>
+            </div>
+          </div>
+
+          {/* PROJECT 4 - Portfolio */}
+          <div className="bg-gray-700/60 backdrop-blur-md border border-gray-500 rounded-2xl p-6 hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-500">
+            <h3 className="text-xl font-semibold text-white">
+              Personal Portfolio Website
+            </h3>
+            <p className="mt-2 text-gray-300">
+              A responsive portfolio site built with React, TailwindCSS, and
+              Firebase Hosting to showcase projects and skills. Features smooth
+              animations, a responsive navbar, and modern design.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-3">
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">React</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">TailwindCSS</span>
+              <span className="px-2 py-1 text-sm bg-blue-600 text-white rounded-full">Firebase Hosting</span>
+            </div>
+            <div className="mt-4 flex gap-4">
+              <a
+                href="https://github.com/Devonpedraza/Personal-Portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 bg-gray-400 text-white rounded-full hover:bg-gray-700 transition"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://devonpedraza.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-500 transition"
+              >
+                Live Site
               </a>
             </div>
           </div>
