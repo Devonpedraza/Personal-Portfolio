@@ -81,7 +81,7 @@ const Home = () => {
         </div>
 
         {/* Image Section */}
-        <div className="hidden md:flex items-center justify-center w-full">
+        <div className="md:flex items-center justify-center w-full">
           <div className="overflow-hidden rounded-tl-[200px] rounded-br-[80px] shadow-2xl w-full max-w-[450px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] aspect-square">
             <img
               src="/Headshot.jpg"
