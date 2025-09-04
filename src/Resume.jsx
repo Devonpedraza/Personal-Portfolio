@@ -12,7 +12,7 @@ const Resume = () => {
       {/* Resume Embed */}
       <div className="w-full max-w-4xl h-[900px] shadow-lg border rounded-lg overflow-hidden">
         <iframe
-          src="/docs/DevonResume.pdf"
+          src="/docs/DevonResumeFinal.pdf"
           className="w-full h-full"
           title="Resume"
         ></iframe>
@@ -20,7 +20,7 @@ const Resume = () => {
 
       {/* Download Button */}
       <a
-        href="/docs/DevonResume.pdf"
+        href="/docs/DevonResumeFinal.pdf"
         target="_blank"
         rel="noopener noreferrer"
         download="DevonResume.pdf"

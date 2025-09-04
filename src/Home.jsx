@@ -40,7 +40,7 @@ const Home = () => {
           <div className="flex flex-wrap mx-auto justify-center md:justify-center mt-6 gap-3">
             {/* Primary CTA */}
             <a
-              href="/docs/DevonResume.pdf"
+              href="/docs/DevonResumeFinal.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center px-4 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
@@ -50,7 +50,7 @@ const Home = () => {
 
             {/* Primary CTA */}
             <a
-              href="/coverletter.pdf"
+              href="/docs/CoverLetter.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center px-4 py-2 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition-colors"
