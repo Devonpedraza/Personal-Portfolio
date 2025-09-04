@@ -190,6 +190,7 @@ const Home = () => {
           {/* --- REVISED 'SEE MORE' BUTTON --- */}
           <RouterLink
             to="/courses"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="flex items-center justify-center px-12 py-3 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-black transition-colors"
           >
             See more
