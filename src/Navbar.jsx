@@ -122,7 +122,7 @@ const App = () => {
           {/* Logo / Name section */}
           <div className="flex-shrink-0">
             <Link to="/" onClick={closeMobileMenu}>
-              <h1 className="text-4xl md:text-5xl font-extrabold tracking-wider text-white transition-transform duration-300 hover:scale-105">
+              <h1 className="text-4xl md:text-5xl font-extrabold tracking-wider text-white transition-transform duration-300 hover:scale-105" style={{ fontFamily: "Playfair Display, serif" }}>
                 DP
               </h1>
             </Link>
