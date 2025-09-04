@@ -1,12 +1,31 @@
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio website built with **React (Vite)**, **TailwindCSS**, and JavaScript to showcase my projects, skills, and experience.  
 
-Currently, two official plugins are available:
+## Features
+- Built with **Vite + React** for fast builds and development  
+- Styled using **TailwindCSS** for clean, responsive design  
+- Fully responsive layout for mobile, tablet, and desktop  
+- Animated page transitions with smooth effects  
+- Responsive navigation bar with active link highlighting  
+- Showcases projects with **GitHub links, live demos, and video demos**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **React (Vite)**
+- **TailwindCSS**
+- **JavaScript**
+- **Framer Motion** (if you used it for animations)
+- **Firebase Hosting** (deployment)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+```bash
+portfolio/
+│── public/         # Static assets
+│── src/            # Source code
+│   ├── components/ # Reusable components
+│   ├── pages/      # Pages (Home, Projects, Contact, etc.)
+│   └── App.jsx     # Root component
+│── package.json
+|── index.html 
+│── tailwind.config.js
+│── vite.config.js
