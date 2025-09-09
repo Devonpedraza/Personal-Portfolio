@@ -91,7 +91,7 @@ const App = () => {
     updatePillStyle(activeLink);
   };
 
-  // Prevent body scroll when mobile menu is open (nicer UX)
+  // Prevent body scroll when mobile menu is open
   useEffect(() => {
     const prev = document.body.style.overflow;
     document.body.style.overflow = isOpen ? "hidden" : prev || "";
